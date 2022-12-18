@@ -22,7 +22,7 @@ class ClothesItem extends StatelessWidget {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
                         image: DecorationImage(
-                          image: AssetImage('assets/images/arrival1.png'),
+                          image: AssetImage(clothes.imageUrl),
                           fit: BoxFit.fitHeight
                         )
                       ),
@@ -31,10 +31,22 @@ class ClothesItem extends StatelessWidget {
                       right: 20,
                         top: 15,
                         child: Container(
-                      child: Icon(Icons.favorite,color: Colors.red,),
+                          height: 30,
+                          width: 30,
+                          decoration: BoxDecoration(
+                            color: Colors.white.withOpacity(0.9),
+                            shape: BoxShape.circle
+                          ),
+                      child: Icon(Icons.favorite,color: Colors.red,size: 20 ,),
                     ))
                   ],
-                )
+                ) ,
+                Text(clothes.title,style: TextStyle(fontWeight: FontWeight.bold,
+                height: 1.5),),
+                Text(clothes.subtitle,style: TextStyle(fontWeight: FontWeight.bold,
+                    height: 1.5),),
+                Text(clothes.price,style: TextStyle(fontWeight: FontWeight.bold,
+                    height: 1.5,color: Theme.of(context).primaryColor),),
               ],
             ),
           ),
