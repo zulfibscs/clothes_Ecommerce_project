@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import '../../models/clothes.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  final bottumList=['home','menu','heart','user'    ];
 
   @override
   Widget build(BuildContext context) {
@@ -20,10 +20,21 @@ class HomePage extends StatelessWidget {
             SearchInput(),
             NewArrival(),
             BestSell(),
-
           ],
         ),
-      )
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
+
+        type: BottomNavigationBarType.fixed,
+        items: bottumList.map((e) =>BottomNavigationBarItem(
+
+           label: e,
+            icon:Image.asset('assets/icons/$e.png',width: 20,)
+        )
+        ).toList(),
+      ),
     );
   }
 }
